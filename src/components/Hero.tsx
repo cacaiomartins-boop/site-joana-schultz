@@ -125,7 +125,7 @@ export function Hero() {
       const tl = gsap.timeline({ defaults: { ease: "none", duration: 1 }, scrollTrigger: { trigger: root, start: "top top", end: "bottom top", scrub: 0.6, invalidateOnRefresh: true } });
       if (portrait) tl.to(portrait, { yPercent: 10, scale: 1.05 }, 0);
       tl.to([text, cue].filter(Boolean) as HTMLElement[], { y: () => -0.14 * (text?.offsetHeight ?? 0) }, 0);
-      cards.forEach((c, i) => tl.to(c, { yPercent: -(38 + 32 * i) }, 0));
+      cards.forEach((c, i) => tl.to(c, { yPercent: -(4 + 3 * i) }, 0));
     });
 
     /* ---------- parallax do mouse (ponteiro fino) ---------- */
@@ -146,7 +146,7 @@ export function Hero() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="inicio" aria-labelledby="hero-title" className="relative isolate flex flex-col overflow-clip pb-14 pt-[6.75rem] sm:pt-[8rem] lg:min-h-[100svh] lg:pb-10">
+    <section ref={ref} id="inicio" aria-labelledby="hero-title" className="relative isolate flex flex-col overflow-clip pb-14 pt-[6.75rem] sm:pt-[8rem] lg:min-h-[100svh] lg:pt-[6.5rem] lg:pb-8">
       <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,var(--color-cream)_0%,var(--color-cream)_55%,var(--color-blush)_150%)]" />
       <div data-hero-ghost aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <GhostLotus className="-left-[14%] top-[2%] w-[46rem]" />
@@ -190,7 +190,7 @@ export function Hero() {
         </div>
 
         {/* ---------- foto em arco ---------- */}
-        <div data-hero-stage className="relative mx-auto mt-12 w-full max-w-[30rem] [--arc-d:0.75rem] sm:[--arc-d:1.25rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:ml-auto lg:w-[min(100%,32rem)] lg:self-center lg:[--arc-d:1.5rem]">
+        <div data-hero-stage className="relative mx-auto mt-12 w-full max-w-[30rem] [--arc-d:0.75rem] sm:[--arc-d:1.25rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:ml-auto lg:w-[min(100%,32rem,calc((100svh-18rem)*0.8))] lg:min-w-[20rem] lg:self-center lg:[--arc-d:1.5rem]">
           <div data-hero-portrait className="cq relative aspect-[4/5] w-full lg:will-change-transform">
             <div data-hero-shadow data-reveal aria-hidden className="absolute inset-x-[10%] -bottom-5 h-14 rounded-[50%] bg-bronze-deep/25 blur-2xl" />
             <div data-hero-arc data-reveal aria-hidden className="pointer-events-none absolute -inset-[var(--arc-d)] text-bronze">
@@ -208,14 +208,14 @@ export function Hero() {
             </div>
           </div>
 
-          <ul data-hero-cards aria-label="Temas que trabalho" className="no-scrollbar mt-8 flex snap-x gap-3 overflow-x-auto pb-2 lg:absolute lg:bottom-8 lg:left-[50%] lg:mt-0 lg:w-[15rem] lg:flex-col lg:gap-3 lg:overflow-visible lg:pb-0">
+          <ul data-hero-cards aria-label="Temas que trabalho" className="no-scrollbar mt-8 flex snap-x gap-3 overflow-x-auto pb-2 lg:absolute lg:inset-x-2 lg:-bottom-7 lg:mt-0 lg:gap-2 lg:overflow-visible lg:pb-0">
             {hero.cards.map((c, i) => (
-              <li key={c.title} data-hero-card data-reveal className={`w-[17.25rem] shrink-0 snap-start lg:w-full ${["lg:ml-0", "lg:ml-2 xl:ml-4", "lg:ml-4 xl:ml-8"][i]}`}>
-                <Link to={`/terapia/${c.slug}`} className="group flex items-center gap-3.5 rounded-2xl border border-white/60 bg-ivory/85 p-3.5 pr-4 shadow-soft backdrop-blur-md transition-[translate,box-shadow] duration-700 ease-[var(--ease-silk)] hover:-translate-y-1 hover:shadow-card">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full border border-bronze/20 bg-cream text-bronze"><ThemeIcon name={c.icon} className="size-5" /></span>
+              <li key={c.title} data-hero-card data-reveal className={`w-[17.25rem] shrink-0 snap-start lg:w-auto lg:min-w-0 lg:flex-1`}>
+                <Link to={`/terapia/${c.slug}`} className="group flex items-center gap-3 rounded-2xl border border-white/60 bg-ivory/90 p-3.5 pr-4 lg:flex-col lg:gap-1.5 lg:p-2.5 lg:text-center shadow-soft backdrop-blur-md transition-[translate,box-shadow] duration-700 ease-[var(--ease-silk)] hover:-translate-y-1 hover:shadow-card">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-full border border-bronze/20 bg-cream text-bronze lg:size-8"><ThemeIcon name={c.icon} className="size-5 lg:size-4" /></span>
                   <span className="min-w-0">
-                    <span className="block font-display text-[1.2rem] font-medium leading-tight text-ink">{c.title}</span>
-                    <span className="mt-0.5 block text-[0.85rem] leading-snug text-text">{c.text}</span>
+                    <span className="block font-display text-[1.2rem] font-medium leading-tight text-ink lg:text-[0.95rem]">{c.title}</span>
+                    <span className="mt-0.5 block text-[0.85rem] leading-snug text-text lg:hidden">{c.text}</span>
                   </span>
                 </Link>
               </li>
@@ -224,7 +224,7 @@ export function Hero() {
         </div>
 
         {/* ---------- cue de rolagem ---------- */}
-        <a data-hero-cue data-reveal href="#espelho" className="group mt-6 flex w-fit flex-col items-start self-start rounded-full sm:mt-10 lg:col-start-1 lg:row-start-2 lg:mt-[clamp(0.5rem,2svh,1.25rem)]">
+        <a data-hero-cue data-reveal href="#espelho" className="group mt-6 flex w-fit flex-col items-start self-start rounded-full sm:mt-10 lg:[@media(max-height:800px)]:hidden lg:col-start-1 lg:row-start-2 lg:mt-[clamp(0.5rem,2svh,1.25rem)]">
           <span data-cue-line aria-hidden className="mb-3 ml-[1.375rem] hidden h-10 w-px bg-bronze/40 sm:block" />
           <span data-cue-body className="flex items-center gap-3 text-[0.9rem] text-muted transition-colors duration-500 group-hover:text-ink">
             <span aria-hidden className="grid size-11 place-items-center rounded-full border border-bronze/35 text-bronze"><span data-cue-arrow><IconDown className="size-4" /></span></span>
