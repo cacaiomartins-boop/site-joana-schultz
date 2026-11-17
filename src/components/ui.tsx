@@ -217,6 +217,8 @@ export function ThemeIcon({ name, className = "" }: { name: string; className?: 
     case "lotus": return (<svg {...p}><path d="M12 19c-3-2.5-3-8 0-12 3 4 3 9.500 0 12Z" /><path d="M12 19c-4 0-7-2.500-8-6.500 3.500 0 7 1.500 8 6.500Z" /><path d="M12 19c4 0 7-2.500 8-6.500-3.500 0-7 1.500-8 6.500Z" /></svg>);
     case "glass": return (<svg {...p}><path d="M7 3h10l-1 7a4 4 0 0 1-8 0L7 3Z" /><path d="M12 14v6M8.500 20h7" /></svg>);
     case "book": return (<svg {...p}><path d="M4 5.500C6.500 4.500 9.500 4.500 12 6c2.500-1.500 5.500-1.500 8-.5V19c-2.500-1-5.500-1-8 .5C9.500 18 6.500 18 4 19V5.500Z" /><path d="M12 6v13.500" /></svg>);
+    case "heart": return (<svg {...p}><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.500-7 10-7 10Z" /></svg>);
+    case "shield": return (<svg {...p}><path d="M12 3 5 6v5c0 4.500 3 8 7 10 4-2 7-5.500 7-10V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></svg>);
     case "video": return (<svg {...p}><rect x="3" y="6" width="13" height="12" rx="2.500" /><path d="m16 10.500 5-3v9l-5-3" /></svg>);
     default: return (<svg {...p}><circle cx="12" cy="12" r="8" /></svg>);
   }

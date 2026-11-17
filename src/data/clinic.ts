@@ -12,6 +12,7 @@ export const clinic = {
   fullName: "Joana Ayla Donzelli Schultz",
   firstName: "Joana",
   role: "Psicóloga",
+  headline: "Psicóloga Clínica | Psicoterapeuta Corporal",
   registry: "CRP 05/00000", // TODO: número do CRP-05 (Rio de Janeiro)
   registryVerifyUrl: "https://cadastro.cfp.org.br/",
   whatsappNumber: WHATSAPP_NUMBER,
@@ -38,7 +39,7 @@ export const clinic = {
   seo: {
     title: "Psicóloga no Rio de Janeiro | Terapia online e presencial · Joana Schultz",
     description:
-      "Psicoterapia online e presencial no Rio de Janeiro (Botafogo) para adultos. Trabalho que une escuta, corpo e sistema nervoso, com foco em objetivos claros. Agende pelo WhatsApp.",
+      "Psicóloga clínica e psicoterapeuta corporal no Rio de Janeiro. Psicoterapia online e presencial para adolescentes, adultos e idosos: ansiedade, trauma, burnout, depressão, luto e dependências. Agende pelo WhatsApp.",
   },
 };
 
@@ -78,17 +79,17 @@ export const nav = [
 /* Hero                                                                */
 /* ------------------------------------------------------------------ */
 export const hero = {
-  eyebrow: ["Psicologia", "Corpo e mente", "Adultos"],
+  eyebrow: ["Psicologia", "Corpo e mente", "Todas as idades"],
   title: "Sua mente já entende. O corpo ainda *não relaxou.*",
   subtitle:
-    "Psicoterapia para adultos que querem compreender o que sentem, regular o corpo e as emoções e alcançar mudanças concretas, com escuta cuidadosa e objetivos claros.",
+    "Psicoterapia para adolescentes, adultos e idosos que querem compreender o que sentem, cuidar do corpo e das emoções e alcançar mudanças concretas, com escuta cuidadosa e objetivos claros.",
   primary: "Começar meu processo",
   secondary: "Como funciona",
   scrollCue: "O que o seu corpo tenta te dizer?",
   cards: [
     { icon: "body", title: "Corpo e sistema nervoso", text: "Entenda como o seu corpo reage ao estresse.", slug: "corpo-e-sistema-nervoso" },
-    { icon: "wave", title: "Ansiedade e estresse", text: "Mais calma para viver o que importa.", slug: "ansiedade-e-estresse" },
-    { icon: "lotus", title: "Autorregulação", text: "Ferramentas para voltar ao seu eixo.", slug: "autorregulacao-emocional" },
+    { icon: "wave", title: "Ansiedade e burnout", text: "Mais calma para viver o que importa.", slug: "ansiedade-e-estresse" },
+    { icon: "shield", title: "Trauma e luto", text: "Acolhimento no seu ritmo.", slug: "trauma-e-experiencias-dificeis" },
   ],
   image: {
     src: "/img/joana.png",
@@ -107,7 +108,7 @@ export const mirror = {
     "O cansaço é constante, e mesmo assim desligar parece impossível.",
     "A ansiedade aparece no peito, no estômago, na garganta, antes mesmo do pensamento.",
     "Falar dos problemas ajuda, mas parece faltar algo para mudar de verdade.",
-    "O que começou como alívio no fim do dia já pesa mais do que alivia.",
+    "O que começou como alívio, no copo, no jogo, nas compras ou na comida, já pesa mais do que alivia.",
     "Você quer mudanças reais e um espaço onde a sua história seja escutada, sem pressa e sem julgamento.",
   ],
   closing:
@@ -199,9 +200,9 @@ export const themes: Theme[] = [
   {
     slug: "ansiedade-e-estresse",
     icon: "wave",
-    label: "Ansiedade e estresse",
+    label: "Ansiedade e burnout",
     title: "E se a ansiedade estiver *no corpo antes de estar na cabeça?*",
-    text: "Reconhecer o que dispara a ansiedade e o estresse e construir, aos poucos, um ritmo mais seu, com mais leveza para viver o que importa.",
+    text: "Reconhecer o que dispara a ansiedade, o estresse e o esgotamento (burnout) e construir, aos poucos, um ritmo mais seu, com mais leveza para viver o que importa.",
     cta: "Conversar sobre isso",
     page: {
       h1a: "A ansiedade não pede desculpas.",
@@ -232,108 +233,108 @@ export const themes: Theme[] = [
     },
   },
   {
-    slug: "autorregulacao-emocional",
-    icon: "lotus",
-    label: "Autorregulação emocional",
-    title: "Como me acalmar *quando tudo parece demais?*",
-    text: "Exercícios práticos de autorregulação para reconhecer o que o corpo sente e voltar ao seu eixo, dentro e fora da sessão.",
-    cta: "Quero aprender a me regular",
+    slug: "trauma-e-experiencias-dificeis",
+    icon: "shield",
+    label: "Trauma e experiências difíceis",
+    title: "E se o corpo ainda *guarda o que a mente já deixou para trás?*",
+    text: "Acompanhamento de experiências traumáticas e difíceis, com atenção ao corpo e ao ritmo de cada pessoa, a partir da psicotraumatologia.",
+    cta: "Conversar com cuidado",
     page: {
-      h1a: "Voltar ao eixo",
-      h1b: "também se aprende.",
+      h1a: "Algumas experiências",
+      h1b: "o corpo ainda lembra.",
       intro:
-        "Existem formas simples de acalmar o corpo e organizar o que sentimos. Elas podem ser aprendidas, treinadas e adaptadas à sua rotina, para que você tenha recursos quando o dia apertar.",
+        "Certas vivências difíceis deixam marcas que não cabem em palavras: sobressaltos, pesadelos, bloqueios, a sensação de estar sempre em alerta. Na terapia, isso pode ser olhado com cuidado, no ritmo em que você se sentir seguro.",
       recognize: [
-        "As emoções chegam fortes e você demora a se recompor.",
-        "Você reage e depois se arrepende.",
-        "Sente que perde o controle em situações de pressão.",
-        "Gostaria de ter um passo a passo para se acalmar.",
+        "Lembranças difíceis voltam sem aviso e o corpo reage.",
+        "Você evita lugares, pessoas ou situações para não sentir.",
+        "Tem a sensação de estar sempre em alerta, mesmo em segurança.",
+        "Sente que algo ficou “preso” e as palavras não alcançam.",
       ],
       paths: [
-        { title: "Reconhecer os sinais", text: "Perceber cedo o que o corpo avisa antes de a emoção tomar conta." },
-        { title: "Treinar na prática", text: "Exercícios guiados de respiração, atenção ao corpo e orientação, ensaiados na sessão." },
-        { title: "Criar o seu kit", text: "Escolher o que funciona para você e montar uma rotina simples de cuidado." },
+        { title: "Criar segurança primeiro", text: "Antes de qualquer aprofundamento, construímos recursos para você se sentir estável." },
+        { title: "Ir com gradualidade", text: "O trabalho acontece em pequenas doses, respeitando o que o seu corpo e a sua história suportam." },
+        { title: "Integrar a experiência", text: "Dar lugar ao que aconteceu, sem ser dominado por isso, e retomar escolhas." },
       ],
       approach: [
-        "Preparo materiais e exercícios de autorregulação para os meus pacientes, com explicações claras sobre o que acontece no corpo.",
-        "A ideia é que você ganhe autonomia: sair da terapia sabendo o que fazer quando o corpo dispara.",
+        "Tenho formação em Psicotraumatologia e trabalho com psicoterapia corporal, incluindo recursos da Experiência Somática®, que considera o papel do sistema nervoso na resposta ao trauma.",
+        "Nada é forçado: você decide o quanto e quando aprofundar, e podemos pausar sempre que precisar.",
       ],
       faq: [
-        { q: "Os exercícios são difíceis?", a: "Não. São curtos, simples e adaptados à sua rotina e ao seu momento." },
-        { q: "Recebo algum material?", a: "Sim. Utilizo infográficos e roteiros de exercícios para apoiar o que fazemos nas sessões." },
-        { q: "Serve para qualquer pessoa?", a: "Os recursos são adaptados a cada caso. Na primeira conversa avaliamos juntos o que faz sentido para você." },
+        { q: "Preciso contar tudo o que aconteceu?", a: "Não. É possível trabalhar sem relatar todos os detalhes. Você conduz o que quer compartilhar e quando." },
+        { q: "Funciona online?", a: "Sim. Muitos recursos são adaptados ao atendimento por videochamada, com sigilo e cuidado." },
+        { q: "Quanto tempo leva?", a: "Não há prazo fixo nem promessa de tempo. Cada processo é único e vamos revisando o caminho juntos." },
       ],
-      metaDescription: "Aprenda exercícios práticos de autorregulação emocional com acompanhamento psicológico. Online e presencial.",
+      metaDescription: "Psicoterapia para trauma e experiências difíceis, com atenção ao corpo e ao sistema nervoso. Online e presencial no Rio de Janeiro.",
     },
   },
   {
-    slug: "alcool-e-outras-substancias",
-    icon: "glass",
-    label: "Álcool e outras substâncias",
-    title: "Quando o alívio *virou rotina?*",
-    text: "Acompanhamento para quem quer rever a relação com o álcool e outras substâncias, com psicoeducação e sem julgamento.",
+    slug: "depressao-e-luto",
+    icon: "heart",
+    label: "Depressão e luto",
+    title: "Quando a tristeza *pesa mais do que o dia?*",
+    text: "Um espaço para acolher a depressão e os processos de luto, no seu tempo, sem pressa para “superar”.",
+    cta: "Conversar sobre isso",
+    page: {
+      h1a: "A dor merece lugar,",
+      h1b: "e não pressa.",
+      intro:
+        "A depressão e o luto cansam o corpo e a vida, e muita gente tenta seguir sozinha. Aqui, a dor é acolhida e compreendida, no seu ritmo, sem cobrança para estar bem.",
+      recognize: [
+        "Tudo parece mais pesado e sem cor, e o cansaço não passa.",
+        "Você perdeu alguém ou algo importante e a falta continua presente.",
+        "Sente-se desconectado de si e das pessoas.",
+        "Cobra-se por não estar melhor.",
+      ],
+      paths: [
+        { title: "Acolher o que sente", text: "Dar nome à tristeza e ao vazio, sem julgamento e sem pressa." },
+        { title: "Cuidar do corpo", text: "Sono, energia e ritmo também fazem parte do processo e entram no trabalho." },
+        { title: "Reconstruir sentido", text: "Aos poucos, encontrar apoios e novos caminhos a partir da sua história." },
+      ],
+      approach: [
+        "Atuo na psicologia clínica existencial-fenomenológica, que escuta o sentido da experiência de cada pessoa, e integro recursos corporais quando fazem sentido.",
+        "Quando necessário, converso com você sobre o acompanhamento de outros profissionais da saúde.",
+      ],
+      faq: [
+        { q: "Isso é depressão?", a: "O diagnóstico exige uma avaliação cuidadosa. Na primeira conversa entendemos o que você vive e o melhor caminho." },
+        { q: "E se eu estiver em sofrimento intenso agora?", a: "Procure apoio imediato: o CVV atende 24 horas pelo 188, e o SAMU pelo 192." },
+        { q: "O luto tem prazo?", a: "Não. Cada pessoa vive o luto de um jeito e no seu tempo." },
+      ],
+      metaDescription: "Psicoterapia para depressão e luto, com acolhimento e escuta cuidadosa. Online e presencial no Rio de Janeiro.",
+    },
+  },
+  {
+    slug: "dependencias-e-compulsoes",
+    icon: "wave",
+    label: "Dependências e compulsões",
+    title: "Quando o alívio *vira compulsão?*",
+    text: "Acompanhamento de dependências químicas e comportamentais, como álcool, jogo, compras compulsivas e compulsão alimentar, com acolhimento e sem julgamento.",
     cta: "Conversar com sigilo",
     page: {
-      h1a: "Rever a relação com a substância",
-      h1b: "começa com uma conversa sem julgamento.",
+      h1a: "Entender o que sustenta",
+      h1b: "é o primeiro passo.",
       intro:
-        "O uso que começa como alívio pode ir ocupando um espaço maior do que gostaríamos. Aqui, o foco é entender o que sustenta esse padrão, o que o corpo e as emoções estão pedindo, e construir alternativas possíveis.",
+        "O que começa como alívio, no copo, no jogo, nas compras ou na comida, pode ir ocupando um espaço maior do que gostaríamos. O foco aqui é compreender o que sustenta esse padrão e construir alternativas possíveis, sem julgamento.",
       recognize: [
-        "Aquele copo no fim do dia já não parece uma escolha.",
         "Você promete diminuir e não consegue sustentar.",
         "Sente culpa depois, mas repete quando a tensão volta.",
-        "Tem medo de ser julgado ao pedir ajuda.",
+        "O comportamento ocupa tempo, dinheiro ou saúde demais.",
+        "Tem receio de ser julgado ao pedir ajuda.",
       ],
       paths: [
-        { title: "Psicoeducação", text: "Entender o que o álcool e outras substâncias fazem no organismo e no humor." },
-        { title: "Olhar para o que sustenta", text: "Reconhecer gatilhos, emoções e situações associadas ao uso." },
-        { title: "Alternativas de regulação", text: "Construir outras formas de aliviar o corpo e as emoções, passo a passo." },
+        { title: "Psicoeducação", text: "Entender o que acontece no corpo, no humor e no cérebro diante da substância ou do comportamento." },
+        { title: "Olhar para o que sustenta", text: "Reconhecer gatilhos, emoções e situações ligados ao padrão." },
+        { title: "Outras formas de regular", text: "Construir alternativas para aliviar o corpo e as emoções, passo a passo." },
       ],
       approach: [
-        "Atendo pessoas com transtornos adictivos com acolhimento, sigilo e responsabilidade. Cada plano é construído com você, sem imposições.",
-        "Quando necessário, o cuidado pode envolver outros profissionais da saúde.",
+        "Tenho formação em Transtornos Adictivos e ampla experiência no acompanhamento de dependências químicas e comportamentais, como transtorno do jogo (ludopatia), compras compulsivas e compulsão alimentar.",
+        "Cada plano é construído com você, com acolhimento e sigilo, e pode envolver outros profissionais da saúde quando necessário.",
       ],
       faq: [
-        { q: "Preciso parar de beber para começar?", a: "Não. Você pode começar como está. O objetivo é construir, junto comigo, o caminho possível para o seu momento." },
-        { q: "Meu caso é sigiloso?", a: "Sim. Tudo o que é conversado é protegido pelo sigilo profissional do Código de Ética da Psicologia." },
-        { q: "E se eu escorregar?", a: "Faz parte do processo de muita gente. Conversamos sobre o que aconteceu, sem julgamento, e seguimos." },
+        { q: "Preciso parar antes de começar?", a: "Não. Você pode começar como está. Construímos juntos o caminho possível para o seu momento." },
+        { q: "Meu caso é sigiloso?", a: "Sim. Tudo é protegido pelo sigilo profissional do Código de Ética da Psicologia." },
+        { q: "E se eu recair?", a: "Faz parte do processo de muita gente. Conversamos sobre o que aconteceu, sem julgamento, e seguimos." },
       ],
-      metaDescription: "Terapia para quem quer rever a relação com o álcool e outras substâncias, com acolhimento e sigilo. Online e presencial.",
-    },
-  },
-  {
-    slug: "psicoeducacao",
-    icon: "book",
-    label: "Psicoeducação",
-    title: "Entender o que acontece *muda o que você faz.*",
-    text: "Explicações simples e materiais próprios sobre cérebro, sistema nervoso e emoções, usados ao longo das sessões para apoiar o seu processo.",
-    cta: "Quero entender melhor",
-    page: {
-      h1a: "Informação clara",
-      h1b: "é uma forma de cuidado.",
-      intro:
-        "Saber por que o corpo reage de determinada forma tira o peso da culpa e abre espaço para escolhas novas. Por isso, a psicoeducação faz parte do meu trabalho desde a primeira sessão.",
-      recognize: [
-        "Você se cobra por reações que não entende.",
-        "Já leu muito, mas não sabe como aplicar.",
-        "Quer entender o que está acontecendo com você, em linguagem simples.",
-        "Prefere uma terapia com orientação prática.",
-      ],
-      paths: [
-        { title: "Explicações simples", text: "Sistema nervoso, estresse, emoções e hábitos, em linguagem clara." },
-        { title: "Materiais visuais", text: "Infográficos e roteiros criados para os pacientes, em cores acolhedoras." },
-        { title: "Prática guiada", text: "Exercícios para colocar o conhecimento em ação no dia a dia." },
-      ],
-      approach: [
-        "Preparo infográficos e exercícios sobre o funcionamento do sistema nervoso e da autorregulação, usados nas sessões como apoio.",
-        "Você recebe o material para consultar quando precisar.",
-      ],
-      faq: [
-        { q: "Preciso estudar fora da sessão?", a: "Não é obrigatório. Os materiais ficam disponíveis para quando você quiser rever." },
-        { q: "Os materiais são em português?", a: "Sim, todos em português e em linguagem simples." },
-        { q: "Isso substitui a terapia?", a: "Não. É um apoio ao processo terapêutico, não um substituto." },
-      ],
-      metaDescription: "Psicoeducação sobre sistema nervoso, emoções e autorregulação como parte da psicoterapia. Online e presencial.",
+      metaDescription: "Psicoterapia para dependências e compulsões (álcool, jogo, compras, alimentar), com acolhimento e sigilo. Online e presencial.",
     },
   },
   {
@@ -380,16 +381,16 @@ export const about = {
   eyebrow: { number: "03", label: "Quem vai caminhar com você" },
   title: "Prazer, *eu sou a Joana.*",
   paragraphs: [
-    "Sou psicóloga clínica, formada há mais de 20 anos. Atendo adultos online e presencialmente, em um trabalho que une a escuta da psicoterapia a recursos que envolvem o corpo e o sistema nervoso.", // TODO confirmar tempo e instituição
-    "Trabalho com psicoeducação e exercícios de autorregulação, e também acompanho pessoas com transtornos adictivos, como o uso de álcool, sempre com acolhimento e sem julgamento.",
-    "Acredito numa terapia acolhedora e, ao mesmo tempo, focada em resultados: definimos objetivos claros, escolhemos os recursos mais adequados ao seu momento e revisamos o caminho sempre que necessário.",
+    "Há momentos em que o sofrimento emocional ultrapassa aquilo que conseguimos expressar em palavras e também se manifesta no corpo. Meu trabalho é acolher essa experiência de forma integral, respeitando a singularidade e a história de cada pessoa.",
+    "Sou psicóloga clínica e psicoterapeuta corporal, com mais de 20 anos de experiência. Tenho ampla experiência no acompanhamento de ansiedade, traumas, burnout, depressão e processos de luto, além de dependências comportamentais, como transtorno do jogo (ludopatia), compras compulsivas e compulsão alimentar.",
+    "Minha abordagem integra aspectos emocionais, relacionais e corporais, buscando compreender não apenas os sintomas, mas também os sentidos que eles assumem na história de cada paciente. Atendo adolescentes, adultos e idosos, presencialmente e online.",
   ],
   quote: "Escutar o corpo também é escutar a história. É isso que me move no consultório.",
   signature: "JOANA SCHULTZ · PSICÓLOGA",
   credentials: [
-    { label: "Formação", value: "Psicologia" }, // TODO instituição
+    { label: "Formação", value: "Psicologia Clínica Existencial-Fenomenológica, Psicotraumatologia, Saúde Materno-Infantil e Transtornos Adictivos" },
     { label: "Experiência", value: "Psicóloga clínica há mais de 20 anos" },
-    { label: "Recurso terapêutico", value: "Abordagem corporal e autorregulação" }, // TODO nome exato (Somatic Experiencing?)
+    { label: "Abordagem", value: "Psicoterapia corporal e Experiência Somática®" },
     { label: "Registro profissional", value: clinic.registry, verify: true },
   ],
   sealText: `PSICÓLOGA CLÍNICA · ${clinic.registry} · PRESENCIAL E ONLINE · `,
@@ -445,12 +446,12 @@ export const office = {
 export const psychoeducation = {
   eyebrow: { number: "06", label: "Psicoeducação" },
   title: "Entender o corpo *ajuda a cuidar dele.*",
-  text: "Parte do meu trabalho é explicar, de forma simples, o que acontece com você. Estes são alguns dos temas dos materiais que uso nas sessões.", // TODO trocar os cartões pelos infográficos reais quando ela enviar
+  text: "Parte do meu trabalho é explicar, de forma simples, o que acontece com você. Estes são alguns dos materiais que preparei para os pacientes. Toque para ampliar.",
   cards: [
-    { tag: "Sistema nervoso", title: "Como o corpo reage ao estresse", text: "Sistema nervoso central, simpático e parassimpático, em linguagem simples." },
-    { tag: "Autorregulação", title: "Exercícios para voltar ao eixo", text: "Passo a passo curto para acalmar o corpo e organizar as emoções." },
-    { tag: "Corpo e emoção", title: "Onde a ansiedade aparece no corpo", text: "Reconhecer os sinais cedo, antes de a emoção tomar conta." },
-    { tag: "Álcool e organismo", title: "O que o álcool faz no corpo", text: "Informação clara sobre os efeitos do consumo, sem julgamento." },
+    { tag: "Sistema nervoso", title: "Sistema nervoso simpático", text: "O que acontece no corpo na resposta de luta, fuga ou congelamento.", src: "/img/psicoed/simpatico.webp", alt: "Infográfico sobre o sistema nervoso simpático: função, efeitos no corpo e quando é ativado" },
+    { tag: "Sistema nervoso", title: "Sistema nervoso parassimpático", text: "Como o corpo recupera a calma, a digestão e o equilíbrio.", src: "/img/psicoed/parassimpatico.webp", alt: "Infográfico sobre o sistema nervoso parassimpático: função, efeitos no corpo e como ativá-lo" },
+    { tag: "Exercício", title: "Pêndulo", text: "Alternar entre segurança e desconforto leve para regular o sistema nervoso.", src: "/img/psicoed/pendulacao.webp", alt: "Infográfico do exercício de pendulação da Experiência Somática, com passo a passo e benefícios" },
+    { tag: "Exercício", title: "Grounding", text: "Um recurso simples para se ancorar no presente e ampliar a sensação de segurança.", src: "/img/psicoed/grounding.webp", alt: "Infográfico do exercício de grounding da Experiência Somática, com passo a passo" },
   ],
   cta: "Quero receber esses materiais",
   ctaMessage: `${hi} gostaria de saber mais sobre os materiais de psicoeducação.`,
@@ -471,8 +472,9 @@ export const faq = {
     { q: "Como o sigilo é garantido?", a: "Tudo o que é conversado na terapia é protegido pelo sigilo profissional previsto no Código de Ética da Psicologia. No online, as sessões acontecem em plataforma de videochamada segura." },
     { q: "Quanto custa? Atende por convênio?", a: "O atendimento é particular. Os valores e as formas de pagamento são informados pelo WhatsApp, de forma reservada. Se o seu plano de saúde oferece reembolso para psicoterapia, posso emitir os recibos necessários." },
     { q: "Preciso estar em crise para começar a terapia?", a: "Não. Muita gente procura a terapia justamente quando percebe algo se repetindo, quando o corpo dá sinais de cansaço ou quando quer prevenir. Cuidar de si não precisa esperar o limite." },
-    { q: "O que é a abordagem corporal que você usa?", a: "É um trabalho que considera o papel do corpo e do sistema nervoso na forma como sentimos e reagimos. Além de conversar, usamos exercícios de atenção ao corpo e de autorregulação. Explico tudo com calma e decidimos juntos o que faz sentido para você." }, // TODO confirmar nome
-    { q: "Você atende quem faz uso de álcool?", a: "Sim. Acompanho pessoas com transtornos adictivos, incluindo o uso de álcool, com acolhimento, sigilo e sem julgamento. Você não precisa ter parado de beber para começar." },
+    { q: "O que é psicoterapia corporal?", a: "É um trabalho que considera o papel do corpo e do sistema nervoso na forma como sentimos e reagimos. Além de conversar, usamos exercícios de atenção ao corpo e de autorregulação, incluindo recursos da Experiência Somática®. Explico tudo com calma e decidimos juntos o que faz sentido para você." },
+    { q: "Você atende dependências e compulsões?", a: "Sim. Tenho formação em Transtornos Adictivos e acompanho dependências químicas e comportamentais, como álcool, jogo, compras compulsivas e compulsão alimentar, com acolhimento, sigilo e sem julgamento. Você não precisa ter parado para começar." },
+    { q: "Quais faixas etárias você atende?", a: "Atendo adolescentes, adultos e idosos, presencialmente e online." },
     { q: "Quanto tempo dura o processo terapêutico?", a: "Não existe um prazo fixo, e eu não faço promessas de tempo. Cada processo é único: há quem venha por um período mais focado e quem prefira um acompanhamento mais longo. Vamos revisando o caminho juntos." },
     { q: "Onde fica o consultório?", a: `O atendimento presencial é em ${clinic.district}, no ${clinic.city}, sempre com hora marcada. Passo o endereço completo ao agendar.` }, // TODO endereço
   ],
