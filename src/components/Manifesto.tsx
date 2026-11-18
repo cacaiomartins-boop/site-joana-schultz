@@ -64,10 +64,10 @@ export function Manifesto() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="manifesto" data-theme="dark" aria-labelledby="manifesto-titulo" className="fit-section grain relative overflow-hidden bg-forest-deep text-ivory">
+    <section ref={ref} id="manifesto" data-theme="dark" aria-labelledby="manifesto-titulo" className="fit-section grain relative overflow-hidden bg-forest-deep py-24 text-ivory sm:py-32 lg:py-40">
       <div aria-hidden className="pointer-events-none absolute -left-[10%] top-[-20%] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.42),transparent)]" />
       <div aria-hidden className="pointer-events-none absolute -right-[12%] bottom-[-30%] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.38),transparent)]" />
-      <FitBox data-mf-wrap className="container-site relative py-24 sm:py-32 lg:py-0">
+      <FitBox data-mf-wrap className="container-site relative">
         <h2 id="manifesto-titulo" className="flex items-center gap-4 font-sans text-[0.75rem] font-medium uppercase leading-none tracking-[0.32em] text-gold-soft sm:gap-6">
           <span data-mf-label>{manifesto.label}</span>
           <span data-mf-line aria-hidden className="h-px flex-1 origin-left bg-gold-soft/50" />
