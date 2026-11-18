@@ -85,7 +85,7 @@ export function Hero() {
             .fromTo("[data-arc-dot]", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.8, ease: "back.out(2)" }, 1.35);
           tl.fromTo("[data-hero-sub]", { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 1.1 }, 0.95)
             .fromTo(["[data-hero-ctas]", "[data-hero-cred]"], { y: 14 }, { y: 0, duration: 1.5, stagger: 0.08, clearProps: "transform" }, 0.05)
-            .fromTo("[data-hero-card]", { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 1.3, stagger: 0.12 }, 1.25);
+            ;
           const paths = qa("[data-underline-path]");
           if (underline && paths.length) {
             tl.set(underline, { autoAlpha: 1 }, 1.5);
@@ -121,7 +121,7 @@ export function Hero() {
       const portrait = q("[data-hero-portrait]");
       const text = q("[data-hero-text]");
       const cue = q("[data-hero-cue]");
-      const cards = qa("[data-hero-card]");
+      const cards: HTMLElement[] = [];
       const tl = gsap.timeline({ defaults: { ease: "none", duration: 1 }, scrollTrigger: { trigger: root, start: "top top", end: "bottom top", scrub: 0.6, invalidateOnRefresh: true } });
       if (portrait) tl.to(portrait, { yPercent: 10, scale: 1.05 }, 0);
       tl.to([text, cue].filter(Boolean) as HTMLElement[], { y: () => -0.14 * (text?.offsetHeight ?? 0) }, 0);
@@ -190,7 +190,7 @@ export function Hero() {
         </div>
 
         {/* ---------- foto em arco ---------- */}
-        <div data-hero-stage className="relative mx-auto mt-12 w-full max-w-[30rem] [--arc-d:0.75rem] sm:[--arc-d:1.25rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:ml-auto lg:w-[min(100%,32rem,calc((100svh-15rem)*0.8))] lg:mb-16 lg:min-w-[20rem] lg:self-center lg:[container-type:inline-size] lg:[--arc-d:1.5rem]">
+        <div data-hero-stage className="relative mx-auto mt-12 w-full max-w-[30rem] [--arc-d:0.75rem] sm:[--arc-d:1.25rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:ml-auto lg:w-[min(100%,32rem,calc((100svh-13rem)*0.8))] lg:min-w-[20rem] lg:self-center lg:[container-type:inline-size] lg:[--arc-d:1.5rem]">
           <div data-hero-portrait className="cq relative aspect-[4/5] w-full lg:will-change-transform">
             <div data-hero-shadow data-reveal aria-hidden className="absolute inset-x-[10%] -bottom-5 h-14 rounded-[50%] bg-bronze-deep/25 blur-2xl" />
             <div data-hero-arc data-reveal aria-hidden className="pointer-events-none absolute -inset-[var(--arc-d)] text-bronze">
@@ -208,19 +208,6 @@ export function Hero() {
             </div>
           </div>
 
-          <ul data-hero-cards aria-label="Temas que trabalho" className="no-scrollbar mt-8 flex snap-x gap-3 overflow-x-auto pb-2 lg:absolute lg:-bottom-[13cqw] lg:-right-[8cqw] lg:mt-0 lg:w-[54cqw] lg:flex-col lg:gap-[2.4cqw] lg:overflow-visible lg:pb-0">
-            {hero.cards.map((c, i) => (
-              <li key={c.title} data-hero-card data-reveal style={{ ["--off" as any]: ["0cqw","3cqw","6cqw"][i] }} className={`w-[17.25rem] shrink-0 snap-start lg:ml-auto lg:w-[calc(100%-var(--off))]`}>
-                <Link to={`/terapia/${c.slug}`} className="group flex items-center gap-3 rounded-2xl border border-white/60 bg-ivory/90 p-3.5 pr-4 lg:gap-[2.4cqw] lg:rounded-[3cqw] lg:p-[2.4cqw] shadow-soft backdrop-blur-md transition-[translate,box-shadow] duration-700 ease-[var(--ease-silk)] hover:-translate-y-1 hover:shadow-card">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full border border-bronze/20 bg-cream text-bronze lg:size-[9cqw]"><ThemeIcon name={c.icon} className="size-5 lg:size-[4.5cqw]" /></span>
-                  <span className="min-w-0">
-                    <span className="block font-display text-[1.2rem] font-medium leading-tight text-ink lg:text-[clamp(0.72rem,3.9cqw,1.05rem)]">{c.title}</span>
-                    <span className="mt-0.5 block text-[0.85rem] leading-snug text-text lg:text-[clamp(0.62rem,2.9cqw,0.8rem)] lg:leading-tight">{c.text}</span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
 
         {/* ---------- cue de rolagem ---------- */}
