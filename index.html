@@ -19,6 +19,15 @@
       rel="stylesheet"
     />
     <script>
+      /* teste: abrir com ?motion=1 simula navegador sem "reduzir movimento" */
+      if (/[?&]motion=1/.test(location.search)) {
+        var om = window.matchMedia.bind(window);
+        window.matchMedia = function (q) {
+          return om(String(q).replace("(prefers-reduced-motion: no-preference)", "(min-width: 0px)").replace("(prefers-reduced-motion: reduce)", "(max-width: 0px)"));
+        };
+      }
+    </script>
+    <script>
       (function () {
         var d = document.documentElement;
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

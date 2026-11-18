@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap, ScrollTrigger, useGSAP, MQ } from "../motion/setup";
 import { messages, process as proc } from "../data/clinic";
-import { Eyebrow, Lotus, Reveal, SplitHeading, WhatsAppButton, lotusHide, rich } from "./ui";
+import { Eyebrow, Lotus, Reveal, SplitHeading, WhatsAppButton, lotusHide, rich, FitBox } from "./ui";
 
 export function Process() {
   const ref = useRef<HTMLDivElement>(null);
@@ -60,8 +60,8 @@ export function Process() {
   }, { scope: ref });
 
   return (
-    <section id="processo" aria-labelledby="processo-titulo" className="relative overflow-x-clip bg-linen py-24 sm:py-32 lg:py-40">
-      <div className="container-site">
+    <section id="processo" aria-labelledby="processo-titulo" className="fit-section relative overflow-x-clip bg-linen py-24 sm:py-32 lg:py-40">
+      <FitBox className="container-site">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
           <div className="lg:col-span-7">
             <Eyebrow number={proc.eyebrow.number} label={proc.eyebrow.label} />
@@ -106,7 +106,7 @@ export function Process() {
           <WhatsAppButton message={messages.general} source="processo" size="lg">{proc.cta}</WhatsAppButton>
           <p className="text-[1rem] text-muted">{proc.note}</p>
         </Reveal>
-      </div>
+      </FitBox>
     </section>
   );
 }

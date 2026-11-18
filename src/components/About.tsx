@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP, reduced, MQ, ScrollTrigger } from "../motion/setup";
 import { about, clinic, messages } from "../data/clinic";
-import { Eyebrow, GhostLotus, Lotus, Seal, SplitHeading, WhatsAppButton, rich, Reveal } from "./ui";
+import { Eyebrow, GhostLotus, Lotus, Seal, SplitHeading, WhatsAppButton, rich, Reveal, FitBox } from "./ui";
 
 function AboutArch() {
   const ref = useRef<HTMLDivElement>(null);
@@ -81,10 +81,10 @@ function YearsStat() {
 
 export function About() {
   return (
-    <section id="sobre" aria-labelledby="sobre-titulo" className="relative overflow-x-clip bg-[linear-gradient(180deg,var(--color-ivory)_0%,var(--color-ivory)_30%,var(--color-cream)_100%)] py-24 sm:py-32 lg:py-40">
+    <section id="sobre" aria-labelledby="sobre-titulo" className="fit-section relative overflow-x-clip bg-[linear-gradient(180deg,var(--color-ivory)_0%,var(--color-ivory)_30%,var(--color-cream)_100%)] py-24 sm:py-32 lg:py-40">
       <GhostLotus className="-left-[14%] top-[6%] w-[38rem]" />
-      <div className="container-site relative grid gap-16 lg:grid-cols-12 lg:items-center lg:gap-12">
-        <div className="relative mx-auto w-full max-w-[26rem] pb-16 lg:col-span-5 lg:mx-0 lg:pb-10">
+      <FitBox className="container-site relative grid gap-16 lg:grid-cols-12 lg:items-center lg:gap-12">
+        <div className="relative mx-auto w-full max-w-[26rem] pb-16 lg:col-span-5 lg:mx-0 lg:max-w-[min(26rem,calc((100svh_-_15rem)*0.8))] lg:pb-8">
           <AboutArch />
           <Seal text={about.sealText} className="absolute -bottom-2 -left-6 size-[9.5rem] sm:-left-12 sm:size-[11rem]" />
           <div className="absolute -bottom-4 right-0 sm:-right-8"><YearsStat /></div>
@@ -92,26 +92,26 @@ export function About() {
 
         <div className="lg:col-span-7">
           <Eyebrow number={about.eyebrow.number} label={about.eyebrow.label} />
-          <SplitHeading as="h2" className="mt-7 text-[clamp(2.3rem,4.4vw,4.25rem)] leading-[1.02] sm:mt-8">
+          <SplitHeading as="h2" className="mt-7 text-[clamp(2.3rem,4.4vw,4.25rem)] leading-[1.02] sm:mt-8 lg:mt-[clamp(0.6rem,1.8svh,1.25rem)] lg:!text-[clamp(2rem,min(3.8vw,6.4svh),3.6rem)]">
             <span id="sobre-titulo">{rich(about.title)}</span>
           </SplitHeading>
-          <Reveal className="mt-8 max-w-[38rem] space-y-5 text-[1.0625rem] leading-[1.75] text-text" stagger={0.1} y={24}>
+          <Reveal className="mt-8 max-w-[38rem] space-y-5 text-[1.0625rem] leading-[1.75] text-text lg:mt-[clamp(0.75rem,2.4svh,1.5rem)] lg:space-y-[clamp(0.5rem,1.4svh,0.9rem)] lg:text-[clamp(0.88rem,2.05svh,1rem)] lg:leading-[1.55]" stagger={0.1} y={24}>
             {about.paragraphs.map((p, i) => (<p key={i} data-reveal-item>{p}</p>))}
           </Reveal>
-          <Reveal as="dl" className="mt-10 grid max-w-[38rem] gap-x-8 gap-y-5 border-t border-bronze/20 pt-8 sm:grid-cols-2" stagger={0.08} y={20}>
+          <Reveal as="dl" className="mt-10 grid max-w-[38rem] gap-x-8 gap-y-5 border-t border-bronze/20 pt-8 sm:grid-cols-2 lg:mt-[clamp(0.75rem,2.4svh,1.5rem)] lg:gap-y-[clamp(0.4rem,1.2svh,0.9rem)] lg:pt-[clamp(0.6rem,1.8svh,1.25rem)]" stagger={0.08} y={20}>
             {about.credentials.map((c) => (
               <div key={c.label} data-reveal-item>
                 <dt className="text-[0.75rem] font-medium uppercase tracking-[0.22em] text-bronze-deep">{c.label}</dt>
-                <dd className="mt-1 text-[1.0625rem] text-ink">
+                <dd className="mt-1 text-[1.0625rem] leading-snug text-ink lg:text-[clamp(0.85rem,1.95svh,0.98rem)]">
                   {c.value}
                   {"verify" in c && c.verify && (<><br /><a href={clinic.registryVerifyUrl} target="_blank" rel="noopener noreferrer" className="ulink text-[0.9rem] text-wine">Verificar no Cadastro Nacional<span className="sr-only"> (abre em nova aba)</span></a></>)}
                 </dd>
               </div>
             ))}
           </Reveal>
-          <Reveal className="mt-10" y={24}><WhatsAppButton message={messages.about} source="sobre">{about.cta}</WhatsAppButton></Reveal>
+          <Reveal className="mt-10 lg:mt-[clamp(0.75rem,2.4svh,1.5rem)]" y={24}><WhatsAppButton message={messages.about} source="sobre" className="lg:!h-11">{about.cta}</WhatsAppButton></Reveal>
         </div>
-      </div>
+      </FitBox>
     </section>
   );
 }

@@ -63,7 +63,7 @@ function MapSvg({ district, street, avenue, className = "" }: { district: string
   );
 }
 
-export function MapCard({ embedUrl, title, district, street = "", avenue = "", pinName, pinStreet, mini = false, children }: { embedUrl: string; title: string; district: string; street?: string; avenue?: string; pinName: string; pinStreet: string; mini?: boolean; children?: ReactNode }) {
+export function MapCard({ embedUrl, title, district, street = "", avenue = "", pinName, pinStreet, mini = false, heightClass, children }: { embedUrl: string; title: string; district: string; street?: string; avenue?: string; pinName: string; pinStreet: string; mini?: boolean; heightClass?: string; children?: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const btn = useRef<HTMLButtonElement>(null);
   const [state, setState] = useState<"idle" | "loading" | "ready">("idle");
@@ -101,7 +101,7 @@ export function MapCard({ embedUrl, title, district, street = "", avenue = "", p
 
   return (
     <div ref={ref} className="relative">
-      <div data-map-card className={`relative overflow-hidden bg-linen shadow-card ${mini ? "h-40 rounded-[1.25rem] border border-white/60" : "h-[22rem] rounded-[2rem] sm:h-[26rem] lg:h-[28rem]"}`}>
+      <div data-map-card className={`relative overflow-hidden bg-linen shadow-card ${mini ? "h-40 rounded-[1.25rem] border border-white/60" : "h-[22rem] rounded-[2rem] sm:h-[26rem] lg:h-[28rem]"} ${heightClass ?? ""}`}>
         <div data-map-inner className="absolute inset-0 will-change-transform">
           {state !== "idle" && (
             <iframe src={embedUrl} title={title} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen onLoad={() => setState("ready")} className="absolute inset-0 size-full border-0" style={{ filter: "saturate(.6) sepia(.16)" }} />

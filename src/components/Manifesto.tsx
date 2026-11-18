@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap, SplitText, useGSAP, MQ } from "../motion/setup";
 import { manifesto } from "../data/clinic";
-import { Lotus } from "./ui";
+import { FitBox, Lotus } from "./ui";
 
 export function Manifesto() {
   const ref = useRef<HTMLElement>(null);
@@ -64,24 +64,24 @@ export function Manifesto() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="manifesto" data-theme="dark" aria-labelledby="manifesto-titulo" className="grain relative overflow-hidden bg-forest-deep text-ivory">
+    <section ref={ref} id="manifesto" data-theme="dark" aria-labelledby="manifesto-titulo" className="fit-section grain relative overflow-hidden bg-forest-deep text-ivory">
       <div aria-hidden className="pointer-events-none absolute -left-[10%] top-[-20%] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.42),transparent)]" />
       <div aria-hidden className="pointer-events-none absolute -right-[12%] bottom-[-30%] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.38),transparent)]" />
-      <div data-mf-wrap className="container-site relative py-24 sm:py-32 lg:py-40">
+      <FitBox data-mf-wrap className="container-site relative py-24 sm:py-32 lg:py-0">
         <h2 id="manifesto-titulo" className="flex items-center gap-4 font-sans text-[0.75rem] font-medium uppercase leading-none tracking-[0.32em] text-gold-soft sm:gap-6">
           <span data-mf-label>{manifesto.label}</span>
           <span data-mf-line aria-hidden className="h-px flex-1 origin-left bg-gold-soft/50" />
           <span data-mf-label>{manifesto.author}</span>
         </h2>
 
-        <div className="mt-14 grid gap-14 lg:mt-20 lg:grid-cols-12 lg:items-center lg:gap-10">
+        <div className="mt-14 grid gap-14 lg:mt-[clamp(1.5rem,5svh,3.5rem)] lg:grid-cols-12 lg:items-center lg:gap-10">
           <div className="lg:col-span-7">
-            <p data-mf-text className="font-display text-[clamp(1.9rem,3.6vw,3.35rem)] leading-[1.15] text-ivory">{manifesto.text}</p>
-            <p data-mf-quote className="mt-10 flex max-w-[34rem] gap-5 font-display text-[1.2rem] italic leading-[1.55] text-gold-soft sm:text-[1.35rem]">
+            <p data-mf-text className="font-display text-[clamp(1.9rem,3.6vw,3.35rem)] leading-[1.15] text-ivory lg:text-[clamp(1.7rem,min(3.4vw,6svh),3.1rem)]">{manifesto.text}</p>
+            <p data-mf-quote className="mt-10 lg:mt-[clamp(1rem,3svh,2rem)] flex max-w-[34rem] gap-5 font-display text-[1.2rem] italic leading-[1.55] text-gold-soft sm:text-[1.35rem]">
               <span aria-hidden className="mt-4 hidden h-px w-10 shrink-0 bg-gold-soft/60 sm:block" />
               {manifesto.quote}
             </p>
-            <ul className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-ivory/85">
+            <ul className="mt-10 lg:mt-[clamp(1rem,3svh,2rem)] flex flex-wrap items-center gap-x-4 gap-y-3 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-ivory/85">
               {manifesto.values.map((v, i) => (
                 <li key={v} data-mf-value className="flex items-center gap-4">
                   {v}
@@ -94,7 +94,7 @@ export function Manifesto() {
             <Lotus withBase strokeWidth={1.4} className="h-auto w-full" />
           </div>
         </div>
-      </div>
+      </FitBox>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { gsap, useGSAP, MQ } from "../motion/setup";
 import { clinic, contact, mapsLinks, messages, waLink } from "../data/clinic";
 import { MapCard } from "./MapCard";
-import { Lotus, Reveal, WhatsAppButton, lotusHide, rich, track } from "./ui";
+import { FitBox, Lotus, Reveal, WhatsAppButton, lotusHide, rich, track } from "./ui";
 
 const formats = [{ v: "presencial", l: "Presencial" }, { v: "online", l: "Online" }, { v: "indecisa", l: "Ainda não sei" }];
 const periods = [{ v: "manha", l: "Manhã", t: "manhã" }, { v: "tarde", l: "Tarde", t: "tarde" }];
@@ -13,7 +13,7 @@ function Callback() {
   const [per, setPer] = useState("");
   const [err, setErr] = useState(false);
   const input = useRef<HTMLInputElement>(null);
-  const chip = (on: boolean) => `rounded-full border px-5 py-2.5 text-[0.95rem] transition-colors duration-500 ${on ? "border-gold-soft bg-gold-soft text-wine-deep" : "border-ivory/30 text-ivory/90 hover:border-ivory"}`;
+  const chip = (on: boolean) => `rounded-full border px-4 py-2 text-[0.92rem] lg:py-1.5 transition-colors duration-500 ${on ? "border-gold-soft bg-gold-soft text-wine-deep" : "border-ivory/30 text-ivory/90 hover:border-ivory"}`;
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
@@ -30,13 +30,13 @@ function Callback() {
     window.open(waLink(msg), "_blank", "noopener,noreferrer");
   };
   return (
-    <div data-float-avoid className="rounded-[2rem] border border-ivory/15 bg-ivory/10 p-7 backdrop-blur-md sm:p-9">
-      <h3 id="cb-titulo" className="text-[clamp(1.75rem,2.4vw,2.25rem)] leading-[1.08] !text-ivory">{contact.callback.title}</h3>
-      <p className="mt-3 text-[1rem] leading-[1.65] text-ivory/75">{contact.callback.text}</p>
-      <form noValidate aria-labelledby="cb-titulo" onSubmit={submit} className="mt-7 space-y-6">
+    <div data-float-avoid className="rounded-[2rem] border border-ivory/15 bg-ivory/10 p-7 backdrop-blur-md sm:p-9 lg:p-[clamp(1.1rem,3svh,2.25rem)]">
+      <h3 id="cb-titulo" className="text-[clamp(1.75rem,2.4vw,2.25rem)] leading-[1.08] !text-ivory lg:!text-[clamp(1.4rem,3.4svh,2rem)]">{contact.callback.title}</h3>
+      <p className="mt-3 text-[1rem] leading-[1.65] text-ivory/75 lg:mt-2 lg:text-[clamp(0.82rem,1.9svh,0.95rem)] lg:leading-[1.45]">{contact.callback.text}</p>
+      <form noValidate aria-labelledby="cb-titulo" onSubmit={submit} className="mt-7 space-y-6 lg:mt-[clamp(0.6rem,1.8svh,1.5rem)] lg:space-y-[clamp(0.5rem,1.6svh,1.25rem)]">
         <div>
           <label htmlFor="cb-nome" className="text-[0.85rem] font-medium text-ivory/85">Seu nome</label>
-          <input ref={input} id="cb-nome" name="nome" autoComplete="given-name" aria-invalid={err} aria-describedby={err ? "cb-erro" : undefined} className={`mt-2 h-13 w-full rounded-2xl border bg-ivory/10 px-4 py-3.5 text-ivory outline-none transition-colors placeholder:text-ivory/40 focus:border-gold-soft ${err ? "border-red-300" : "border-ivory/20"}`} />
+          <input ref={input} id="cb-nome" name="nome" autoComplete="given-name" aria-invalid={err} aria-describedby={err ? "cb-erro" : undefined} className={`mt-2 h-13 w-full rounded-2xl border bg-ivory/10 px-4 py-3.5 lg:h-11 lg:py-2 text-ivory outline-none transition-colors placeholder:text-ivory/40 focus:border-gold-soft ${err ? "border-red-300" : "border-ivory/20"}`} />
           {err && <p id="cb-erro" role="alert" className="mt-2 text-[0.9rem] text-red-200">Por favor, digite seu nome.</p>}
         </div>
         <fieldset>
@@ -48,9 +48,9 @@ function Callback() {
           <div className="mt-2 flex flex-wrap gap-2.5">{periods.map((f) => (<button key={f.v} type="button" aria-pressed={per === f.v} onClick={() => setPer(per === f.v ? "" : f.v)} className={chip(per === f.v)}>{f.l}</button>))}</div>
         </fieldset>
         <div aria-hidden className="absolute -left-[9999px]"><label>Deixe este campo em branco<input name="site" tabIndex={-1} autoComplete="off" /></label></div>
-        <button type="submit" className="inline-flex h-14 w-full items-center justify-center gap-3 rounded-full bg-ivory px-7 text-[1.02rem] font-medium text-wine shadow-soft transition-colors duration-500 hover:bg-white">Abrir mensagem no WhatsApp<span className="sr-only"> (abre em nova aba)</span></button>
+        <button type="submit" className="inline-flex h-14 lg:h-12 w-full items-center justify-center gap-3 rounded-full bg-ivory px-7 text-[1.02rem] font-medium text-wine shadow-soft transition-colors duration-500 hover:bg-white">Abrir mensagem no WhatsApp<span className="sr-only"> (abre em nova aba)</span></button>
       </form>
-      <p className="mt-5 text-[0.85rem] leading-snug text-ivory/65">{contact.callback.privacy} <Link to="/privacidade" className="underline underline-offset-4 hover:text-ivory">Política de privacidade</Link></p>
+      <p className="mt-5 text-[0.85rem] leading-snug text-ivory/65 lg:mt-3 lg:text-[0.78rem]">{contact.callback.privacy} <Link to="/privacidade" className="underline underline-offset-4 hover:text-ivory">Política de privacidade</Link></p>
     </div>
   );
 }
@@ -84,16 +84,17 @@ export function Contact() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="contato" className="relative bg-cream px-2.5 py-16 sm:px-4 sm:py-20 lg:py-24">
+    <section ref={ref} id="contato" className="fit-section relative bg-cream px-2.5 py-16 sm:px-4 sm:py-20 lg:py-24">
       <div data-cta-panel data-theme="dark" className="grain relative overflow-hidden rounded-[2rem] bg-forest text-ivory sm:rounded-[2.5rem]">
         <div data-cta-glow aria-hidden className="pointer-events-none absolute -left-[10%] -top-[25%] size-[48rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.45),transparent)]" />
         <div data-cta-glow aria-hidden className="pointer-events-none absolute -bottom-[30%] right-[-10%] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.4),transparent)]" />
-        <div data-cta-inner className="container-site relative grid gap-14 py-20 sm:py-24 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-32">
+        <FitBox className="relative">
+        <div data-cta-inner className="container-site relative grid gap-14 py-20 sm:py-24 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-[clamp(2.25rem,6svh,4rem)] lg:pb-[clamp(7rem,24svh,11rem)]">
           <div className="lg:col-span-6">
-            <div data-cta-lotus aria-hidden className="w-24 text-gold-soft"><Lotus withBase strokeWidth={1.6} className="h-auto w-full" /></div>
-            <h2 className="mt-8 text-[clamp(2.3rem,4.4vw,4.25rem)] leading-[1.02] !text-ivory">{rich(contact.title, "italic text-gold-soft")}</h2>
-            <p className="mt-6 max-w-[32rem] text-[1.0625rem] leading-[1.75] text-ivory/75">{contact.text}</p>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <div data-cta-lotus aria-hidden className="w-24 text-gold-soft lg:w-[clamp(3.5rem,9svh,6rem)]"><Lotus withBase strokeWidth={1.6} className="h-auto w-full" /></div>
+            <h2 className="mt-8 text-[clamp(2.3rem,4.4vw,4.25rem)] leading-[1.02] !text-ivory lg:mt-[clamp(0.75rem,2.4svh,2rem)] lg:!text-[clamp(2rem,min(3.8vw,6.4svh),3.6rem)]">{rich(contact.title, "italic text-gold-soft")}</h2>
+            <p className="mt-6 max-w-[32rem] text-[1.0625rem] leading-[1.75] text-ivory/75 lg:text-[clamp(0.88rem,2.05svh,1rem)] lg:leading-[1.55]">{contact.text}</p>
+            <div className="mt-9 lg:mt-[clamp(0.9rem,2.6svh,2rem)] flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <WhatsAppButton message={messages.general} source="contato" variant="light" size="lg">{contact.button}</WhatsAppButton>
               <p className="text-[0.95rem] text-ivory/70">WhatsApp {clinic.phoneDisplay}{clinic.hours.short && <><br />{clinic.hours.short}</>}</p>
             </div>
@@ -101,9 +102,9 @@ export function Contact() {
           <div className="lg:col-span-6 xl:col-span-5 xl:col-start-8"><Callback /></div>
         </div>
 
-        <div className="container-site relative pb-10 lg:flex lg:justify-end lg:pb-12">
-          <div data-float-avoid className="w-full lg:w-[15rem]">
-            <MapCard mini embedUrl={mapsLinks.embed} title={`Mapa de ${clinic.district}`} district={clinic.district} street={clinic.address.street.toUpperCase()} pinName={clinic.district} pinStreet={clinic.city}>
+        <div className="container-site relative pb-10 lg:pointer-events-none lg:absolute lg:inset-x-0 lg:bottom-[clamp(0.75rem,2.6svh,1.5rem)] lg:flex lg:justify-end lg:pb-0">
+          <div data-float-avoid className="w-full lg:pointer-events-auto lg:w-[clamp(11rem,26svh,15rem)]">
+            <MapCard mini heightClass="lg:!h-[clamp(5.5rem,16svh,9rem)]" embedUrl={mapsLinks.embed} title={`Mapa de ${clinic.district}`} district={clinic.district} street={clinic.address.street.toUpperCase()} pinName={clinic.district} pinStreet={clinic.city}>
               <p className="mt-2 flex items-center justify-between gap-3 text-[0.8rem] text-ivory/75">
                 <span>{clinic.district} · {clinic.city}</span>
                 <span className="flex gap-3">
@@ -114,6 +115,7 @@ export function Contact() {
             </MapCard>
           </div>
         </div>
+        </FitBox>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { gsap, useGSAP, reduced, MQ, scrollToY } from "../motion/setup";
 import { clinic, footer, messages, nav, themes } from "../data/clinic";
 import { SectionLink } from "./links";
-import { IconArrow, IconWhats, Lotus, WhatsAppButton, lotusHide } from "./ui";
+import { FitBox, IconArrow, IconWhats, Lotus, WhatsAppButton, lotusHide } from "./ui";
 
 function BackToTop() {
   const ref = useRef<HTMLButtonElement>(null);
@@ -73,21 +73,21 @@ export function Footer() {
   }, { scope: ref });
 
   const colTitle = "mb-5 text-[0.75rem] font-medium uppercase tracking-[0.3em] text-gold-soft";
-  const colLink = "inline-block py-1 text-[0.98rem] text-ivory/80 transition-colors duration-500 hover:text-ivory";
+  const colLink = "inline-block py-1 text-[0.98rem] lg:py-0.5 text-ivory/80 transition-colors duration-500 hover:text-ivory";
 
   return (
     <footer ref={ref} data-site-footer className="relative">
       <div data-footer-panel data-theme="dark" className="grain relative overflow-hidden bg-wine-deep text-ivory">
         <div aria-hidden className="pointer-events-none absolute -left-[10%] -top-[30%] size-[60rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.28),transparent)]" />
-        <div className="container-site relative pb-10 pt-20 sm:pt-24 lg:pt-28">
-          <div className="flex flex-col gap-10 border-b border-gold-soft/20 pb-14 sm:flex-row sm:items-end sm:justify-between">
-            <p className="font-display text-[clamp(2.2rem,4.4vw,3.75rem)] leading-[1.04] text-ivory">
+        <FitBox className="container-site relative pb-10 pt-20 sm:pt-24 lg:pb-[clamp(1rem,3svh,2rem)] lg:pt-[clamp(1.75rem,6svh,4rem)]">
+          <div className="flex flex-col gap-10 border-b border-gold-soft/20 pb-14 sm:flex-row sm:items-end sm:justify-between lg:pb-[clamp(1rem,3.4svh,2.5rem)]">
+            <p className="font-display text-[clamp(2.2rem,4.4vw,3.75rem)] leading-[1.04] text-ivory lg:text-[clamp(1.7rem,min(3.6vw,5.4svh),3.25rem)]">
               {footer.tagline.split(/\*(.+?)\*/g).map((p, i) => (i % 2 ? <em key={i} className="italic text-gold-soft">{p}</em> : <span key={i}>{p}</span>))}
             </p>
             <WhatsAppButton message={messages.header} source="rodape" variant="light" size="lg">Agendar conversa</WhatsAppButton>
           </div>
 
-          <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-[clamp(0.9rem,3svh,2rem)]">
             <nav aria-label="Navegação do rodapé" className="lg:col-span-2">
               <h2 className={colTitle}>Navegação</h2>
               <ul>
@@ -117,7 +117,7 @@ export function Footer() {
           </div>
 
           {/* nome gigante */}
-          <div data-wordmark aria-hidden className="relative select-none py-6">
+          <div data-wordmark aria-hidden className="relative select-none py-6 lg:py-[clamp(0.25rem,1.2svh,1rem)]">
             <div className="flex items-center justify-center gap-4 text-gold-soft">
               <span data-wm-line className="h-px w-[18%] origin-right bg-gold-soft/40" />
               <span data-wm-dot className="size-1.5 rounded-full bg-gold-soft" />
@@ -125,14 +125,14 @@ export function Footer() {
               <span data-wm-dot className="size-1.5 rounded-full bg-gold-soft" />
               <span data-wm-line className="h-px w-[18%] origin-left bg-gold-soft/40" />
             </div>
-            <div className="mt-4 flex justify-center overflow-hidden whitespace-pre font-display text-[clamp(1.6rem,7.4vw,6.5rem)] uppercase leading-[1.05] tracking-[0.12em] text-ivory/20">
+            <div className="mt-4 flex justify-center overflow-hidden whitespace-pre font-display text-[clamp(1.6rem,min(7.4vw,10svh),6.5rem)] uppercase leading-[1.05] tracking-[0.12em] text-ivory/20">
               {letters.map((c, i) => (<span key={i} className="inline-block overflow-hidden"><span data-wm-char className="inline-block">{c === " " ? " " : c}</span></span>))}
             </div>
           </div>
 
-          <p className="mt-8 text-center text-[0.9rem] text-ivory/70">{footer.emergency}</p>
+          <p className="mt-8 text-center text-[0.9rem] text-ivory/70 lg:mt-[clamp(0.4rem,1.4svh,1.25rem)]">{footer.emergency}</p>
 
-          <div className="mt-10 flex flex-col gap-6 border-t border-gold-soft/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col gap-6 border-t border-gold-soft/20 pt-8 lg:mt-[clamp(0.6rem,2svh,1.75rem)] lg:pt-[clamp(0.6rem,2svh,1.5rem)] sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1.5 text-[0.9rem] text-ivory/70">
               <p>{clinic.role} {clinic.fullName} · {clinic.registry}</p>
               <p className="flex flex-wrap gap-x-5 gap-y-1">
@@ -143,7 +143,7 @@ export function Footer() {
             </div>
             <BackToTop />
           </div>
-        </div>
+        </FitBox>
       </div>
     </footer>
   );

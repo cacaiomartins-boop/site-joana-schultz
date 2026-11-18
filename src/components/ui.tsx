@@ -332,3 +332,57 @@ export function Seal({ text, className = "" }: { text: string; className?: strin
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* FitBox: encolhe o conteúdo para a seção caber em 100svh no desktop   */
+/* ------------------------------------------------------------------ */
+export function FitBox({ children, className = "", ...rest }: { children: ReactNode; className?: string; [k: string]: any }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const box = ref.current;
+    if (!box) return;
+    const mq = window.matchMedia("(min-width: 1024px) and (min-height: 640px)");
+    let deb = 0;
+    let last = 1;
+    const apply = () => {
+      box.style.transform = "";
+      box.style.marginBlock = "";
+      let s = 1;
+      if (mq.matches) {
+        const h = box.offsetHeight;
+        if (h) {
+          const stop = box.closest("section,footer");
+          let chrome = 0;
+          let el: HTMLElement | null = box.parentElement;
+          while (el) {
+            const cs = getComputedStyle(el);
+            chrome += parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+            if (el === stop) break;
+            el = el.parentElement;
+          }
+          s = Math.max(0.7, Math.min(1, (window.innerHeight - chrome) / h));
+          if (s < 0.995) {
+            box.style.transform = `scale(${s})`;
+            box.style.transformOrigin = "50% 50%";
+            box.style.marginBlock = `${-(h * (1 - s)) / 2}px`;
+          } else s = 1;
+        }
+      }
+      box.dataset.fit = s.toFixed(2);
+      if (Math.abs(s - last) > 0.005) {
+        last = s;
+        window.clearTimeout(deb);
+        deb = window.setTimeout(() => ScrollTrigger.refresh(), 250);
+      }
+    };
+    apply();
+    const ro = new ResizeObserver(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(apply); });
+    let raf = 0;
+    Array.from(box.children).forEach((c) => ro.observe(c));
+    window.addEventListener("resize", apply);
+    mq.addEventListener("change", apply);
+    document.fonts?.ready.then(apply);
+    return () => { ro.disconnect(); window.removeEventListener("resize", apply); mq.removeEventListener("change", apply); window.clearTimeout(deb); cancelAnimationFrame(raf); };
+  }, []);
+  return <div ref={ref} className={className} {...rest}>{children}</div>;
+}

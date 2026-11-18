@@ -143,14 +143,17 @@ html.lenis, html.lenis body { height: auto; }
 .mirror[data-pinned="true"] { height: 100svh; padding-block: 0; display: flex; align-items: center; }
 .mirror[data-pinned="true"] .mirror-grid { width: 100%; align-items: center; }
 .mirror[data-pinned="true"] [data-mirror-window] {
-  height: min(36rem, calc(100svh - 8rem));
+  height: min(48rem, calc(100svh - 7rem));
   overflow: clip;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 2.25rem, #000 calc(100% - 2.25rem), transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 2.25rem, #000 calc(100% - 2.25rem), transparent);
 }
 .mirror[data-pinned="true"] [data-mirror-inner] { padding-block: 2.25rem; will-change: transform; }
 .mirror[data-pinned="true"] [data-mirror-line] { padding-block: clamp(0.25rem, 1svh, 0.6rem); }
-.mirror[data-pinned="true"] [data-mirror-text] { font-size: clamp(1.4rem, min(2.1vw, 3.6svh), 2.2rem); }
+.mirror[data-pinned="true"] [data-mirror-text] { font-size: clamp(1rem, min(1.6vw, 2.8svh), 1.6rem); line-height: 1.22; }
+.mirror[data-pinned="true"] [data-mirror-line] { padding-block: clamp(0.2rem, 0.9svh, 0.55rem); }
+.mirror[data-pinned="true"] [data-mirror-closing] { margin-top: clamp(0.5rem, 1.6svh, 1.25rem); }
+.mirror[data-pinned="true"] [data-mirror-closing-item] p, .mirror[data-pinned="true"] p[data-mirror-closing-item] { font-size: clamp(0.82rem, 1.9svh, 1rem); line-height: 1.45; }
 
 /* ---------- Seção de temas (reel) ---------- */
 .help .help-track { display: block; }
@@ -220,3 +223,15 @@ html.lenis, html.lenis body { height: auto; }
 /* ---------- barra de rolagem do carrossel de psicoeducação ---------- */
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ---------- Encaixe na tela (desktop): cada seção cabe em 100svh ---------- */
+@media (min-width: 1024px) and (min-height: 640px) {
+  .fit-section {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(4.25rem, 9svh, 5.75rem);
+    padding-bottom: clamp(2rem, 5svh, 3.5rem);
+  }
+}
