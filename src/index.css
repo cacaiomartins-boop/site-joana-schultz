@@ -235,3 +235,22 @@ html.lenis, html.lenis body { height: auto; }
     padding-bottom: clamp(2rem, 5svh, 3.5rem);
   }
 }
+
+/* ---------- Temas: cards escalam com a altura da tela (modo carrossel) ---------- */
+.help[data-reel="on"] [data-card-inner] { padding-top: clamp(1.1rem, 4.4svh, 2.75rem); padding-bottom: clamp(0.7rem, 2.4svh, 1.5rem); }
+.help[data-reel="on"] .hc-num { font-size: clamp(1.5rem, 5svh, 2.9rem); }
+.help[data-reel="on"] .hc-icon { margin-top: clamp(0.25rem, 1.2svh, 1rem); width: clamp(1.3rem, 3.4svh, 1.75rem); height: clamp(1.3rem, 3.4svh, 1.75rem); }
+.help[data-reel="on"] .hc-label { margin-top: clamp(0.4rem, 1.6svh, 1.25rem); font-size: clamp(0.62rem, 1.55svh, 0.78rem); }
+.help[data-reel="on"] .hc-title { margin-top: clamp(0.3rem, 1.2svh, 0.75rem); font-size: clamp(1.05rem, 3.4svh, 1.65rem); line-height: 1.1; }
+.help[data-reel="on"] .hc-text { margin-top: clamp(0.4rem, 1.5svh, 1rem); font-size: clamp(0.76rem, 2svh, 1rem); line-height: 1.42; }
+.help[data-reel="on"] .hc-foot { padding-top: clamp(0.4rem, 1.6svh, 1.5rem); }
+.help[data-reel="on"] .hc-div { margin-bottom: clamp(0.3rem, 1.4svh, 1rem); }
+.help[data-reel="on"] .hc-btn { min-height: clamp(2.2rem, 5.6svh, 3rem); padding-block: clamp(0.3rem, 1.2svh, 0.625rem); font-size: clamp(0.8rem, 2svh, 0.95rem); }
+.help[data-reel="on"] .hc-link { margin-top: 0; padding-block: clamp(0.15rem, 0.8svh, 0.4rem); font-size: clamp(0.78rem, 1.9svh, 0.95rem); }
+@media (max-height: 560px) { .help[data-reel="on"] .hc-icon { display: none; } }
+.help[data-reel="on"] .help-card { width: clamp(19rem, 30vw, 27rem); }
+.help[data-reel="on"] .help-card { height: min(35rem, calc(100svh - 9.5rem)); }
+.help[data-reel="on"] [data-card-final] [data-final-lotus] { width: clamp(3.5rem, 18svh, 8rem); }
+.help[data-reel="on"] [data-card-final] h3 { margin-top: clamp(0.5rem, 2.4svh, 2rem); font-size: clamp(1.15rem, 3.6svh, 1.75rem); }
+.help[data-reel="on"] [data-card-final] p { margin-top: clamp(0.4rem, 1.5svh, 1rem); font-size: clamp(0.78rem, 2svh, 1rem); line-height: 1.42; }
+.help[data-reel="on"] [data-card-final] [data-final-item]:last-child { margin-top: clamp(0.6rem, 2.2svh, 1.75rem); }

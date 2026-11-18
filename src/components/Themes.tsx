@@ -69,7 +69,7 @@ export function Themes() {
     const movingTimer = gsap.delayedCall(0.2, () => list.removeAttribute("data-moving")).pause();
 
     const mm = gsap.matchMedia();
-    mm.add({ reel: `${MQ.desktopPin} and ${MQ.motion}`, motion: MQ.motion, fine: MQ.fine }, (ctx) => {
+    mm.add({ reel: `(min-width: 1024px) and (min-height: 480px) and ${MQ.motion}`, motion: MQ.motion, fine: MQ.fine }, (ctx) => {
       const { reel, motion, fine } = ctx.conditions as any;
       const cleanups: (() => void)[] = [];
 
@@ -186,15 +186,15 @@ export function Themes() {
                   <Lotus className="w-[70%]" strokeWidth={1.2} />
                 </div>
                 <div data-card-inner className="relative flex h-full flex-col items-center px-6 pb-5 pt-11 text-center sm:px-8">
-                  <span data-card-num aria-hidden className="font-display text-[2.9rem] font-normal italic leading-none text-bronze">{String(i + 1).padStart(2, "0")}</span>
-                  <ThemeIcon name={t.icon} className="mt-4 size-7 text-bronze" />
-                  <h3 id={`tema-${t.slug}`} className="mt-5 font-sans text-[0.78rem] font-medium uppercase leading-snug tracking-[0.22em] text-bronze-deep">{t.label}</h3>
-                  <p className="mt-3 text-balance font-display text-[1.65rem] font-medium leading-[1.1] text-ink">{rich(t.title)}</p>
-                  <p className="mt-4 text-[1.0625rem] leading-[1.62] text-text">{t.text}</p>
-                  <div className="mt-auto flex w-full flex-col items-center gap-1 pt-6">
-                    <span aria-hidden className="mb-4 flex items-center gap-2 text-bronze/45"><span className="h-px w-7 bg-current" /><span className="size-1 rounded-full bg-current" /><span className="h-px w-7 bg-current" /></span>
-                    <WhatsAppButton message={messages.theme(t.label.toLowerCase())} source={`tema-${t.slug}`} variant="outline" className="!h-auto min-h-12 w-full py-2.5 text-center leading-snug" magnetic={false}>{t.cta}</WhatsAppButton>
-                    <Link to={`/terapia/${t.slug}`} className="ulink mt-2 inline-flex items-center gap-2 py-1.5 text-[0.95rem] font-medium text-wine">
+                  <span data-card-num aria-hidden className="hc-num font-display text-[2.9rem] font-normal italic leading-none text-bronze">{String(i + 1).padStart(2, "0")}</span>
+                  <ThemeIcon name={t.icon} className="hc-icon mt-4 size-7 text-bronze" />
+                  <h3 id={`tema-${t.slug}`} className="hc-label mt-5 font-sans text-[0.78rem] font-medium uppercase leading-snug tracking-[0.22em] text-bronze-deep">{t.label}</h3>
+                  <p className="hc-title mt-3 text-balance font-display text-[1.65rem] font-medium leading-[1.1] text-ink">{rich(t.title)}</p>
+                  <p className="hc-text mt-4 text-[1.0625rem] leading-[1.62] text-text">{t.text}</p>
+                  <div className="hc-foot mt-auto flex w-full flex-col items-center gap-1 pt-6">
+                    <span aria-hidden className="hc-div mb-4 flex items-center gap-2 text-bronze/45"><span className="h-px w-7 bg-current" /><span className="size-1 rounded-full bg-current" /><span className="h-px w-7 bg-current" /></span>
+                    <WhatsAppButton message={messages.theme(t.label.toLowerCase())} source={`tema-${t.slug}`} variant="outline" className="hc-btn !h-auto min-h-12 w-full py-2.5 text-center leading-snug" magnetic={false}>{t.cta}</WhatsAppButton>
+                    <Link to={`/terapia/${t.slug}`} className="hc-link ulink mt-2 inline-flex items-center gap-2 py-1.5 text-[0.95rem] font-medium text-wine">
                       Saiba mais<span className="sr-only"> sobre {t.label}</span> <IconArrow className="size-4" />
                     </Link>
                   </div>
