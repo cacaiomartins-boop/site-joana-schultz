@@ -78,7 +78,7 @@ export function Footer() {
   return (
     <footer ref={ref} data-site-footer className="relative">
       <div data-footer-panel data-theme="dark" className="grain relative overflow-hidden bg-wine-deep text-ivory">
-        <div aria-hidden className="pointer-events-none absolute -left-[10%] -top-[30%] size-[60rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.55),transparent)]" />
+        <div aria-hidden className="pointer-events-none absolute -left-[10%] -top-[30%] size-[60rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.28),transparent)]" />
         <div className="container-site relative pb-10 pt-20 sm:pt-24 lg:pt-28">
           <div className="flex flex-col gap-10 border-b border-gold-soft/20 pb-14 sm:flex-row sm:items-end sm:justify-between">
             <p className="font-display text-[clamp(2.2rem,4.4vw,3.75rem)] leading-[1.04] text-ivory">

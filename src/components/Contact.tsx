@@ -85,9 +85,9 @@ export function Contact() {
 
   return (
     <section ref={ref} id="contato" className="relative bg-cream px-2.5 py-16 sm:px-4 sm:py-20 lg:py-24">
-      <div data-cta-panel data-theme="dark" className="grain relative overflow-hidden rounded-[2rem] bg-wine-deep text-ivory sm:rounded-[2.5rem]">
-        <div data-cta-glow aria-hidden className="pointer-events-none absolute -left-[10%] -top-[25%] size-[48rem] rounded-full bg-[radial-gradient(closest-side,rgba(142,58,72,0.55),transparent)]" />
-        <div data-cta-glow aria-hidden className="pointer-events-none absolute -bottom-[30%] right-[-10%] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgba(47,74,60,0.4),transparent)]" />
+      <div data-cta-panel data-theme="dark" className="grain relative overflow-hidden rounded-[2rem] bg-forest text-ivory sm:rounded-[2.5rem]">
+        <div data-cta-glow aria-hidden className="pointer-events-none absolute -left-[10%] -top-[25%] size-[48rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.45),transparent)]" />
+        <div data-cta-glow aria-hidden className="pointer-events-none absolute -bottom-[30%] right-[-10%] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.4),transparent)]" />
         <div data-cta-inner className="container-site relative grid gap-14 py-20 sm:py-24 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-32">
           <div className="lg:col-span-6">
             <div data-cta-lotus aria-hidden className="w-24 text-gold-soft"><Lotus withBase strokeWidth={1.6} className="h-auto w-full" /></div>

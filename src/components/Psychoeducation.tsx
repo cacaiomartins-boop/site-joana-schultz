@@ -43,8 +43,8 @@ export function Psychoeducation() {
   }, [open]);
 
   return (
-    <section id="psicoeducacao" data-theme="dark" aria-labelledby="pe-titulo" className="grain relative overflow-x-clip bg-forest py-24 text-ivory sm:py-32 lg:py-40">
-      <div aria-hidden className="pointer-events-none absolute -right-[10%] -top-[20%] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.35),transparent)]" />
+    <section id="psicoeducacao" data-theme="dark" aria-labelledby="pe-titulo" className="grain relative overflow-x-clip bg-wine-deep py-24 text-ivory sm:py-32 lg:py-40">
+      <div aria-hidden className="pointer-events-none absolute -right-[10%] -top-[20%] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.3),transparent)]" />
       <div aria-hidden className="pointer-events-none absolute -bottom-[6rem] -left-[8rem] w-[32rem] text-gold-soft opacity-[0.07]"><Lotus strokeWidth={1.2} className="h-auto w-full" /></div>
       <div className="container-site relative">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">

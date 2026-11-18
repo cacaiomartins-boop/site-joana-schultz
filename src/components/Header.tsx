@@ -81,7 +81,7 @@ export function Header() {
         data-scrolled="false"
         data-tone="light"
         data-menu-open={menuOpen ? "true" : "false"}
-        className="group/header fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter,color] duration-700 data-[scrolled=true]:bg-cream/85 data-[scrolled=true]:shadow-[0_1px_0_rgb(146_108_62/0.14)] data-[scrolled=true]:backdrop-blur-xl data-[tone=dark]:data-[scrolled=true]:bg-wine-deep/80 data-[tone=dark]:data-[scrolled=true]:shadow-[0_1px_0_rgb(216_192_154/0.18)] data-[menu-open=true]:!bg-cream data-[menu-open=true]:shadow-[0_1px_0_rgb(146_108_62/0.14)]"
+        className="group/header fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter,color] duration-700 data-[scrolled=true]:bg-cream/85 data-[scrolled=true]:shadow-[0_1px_0_rgb(75_109_89/0.2)] data-[scrolled=true]:backdrop-blur-xl data-[tone=dark]:data-[scrolled=true]:bg-ink/80 data-[tone=dark]:data-[scrolled=true]:shadow-[0_1px_0_rgb(196_216_200/0.18)] data-[menu-open=true]:!bg-cream data-[menu-open=true]:shadow-[0_1px_0_rgb(75_109_89/0.2)]"
       >
         <div className="container-site flex h-[5.5rem] items-center justify-between gap-6 transition-[height] duration-700 ease-[var(--ease-silk)] lg:h-[6.25rem] group-data-[scrolled=true]/header:h-[4.25rem] lg:group-data-[scrolled=true]/header:h-[4.75rem]">
           <Link to="/" aria-label={`${clinic.displayName}, psicóloga — início`} className="text-ink transition-colors duration-700 group-data-[tone=dark]/header:text-ivory group-data-[menu-open=true]/header:!text-ink">

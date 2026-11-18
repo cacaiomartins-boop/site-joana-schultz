@@ -64,9 +64,9 @@ export function Manifesto() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="manifesto" data-theme="dark" aria-labelledby="manifesto-titulo" className="grain relative overflow-hidden bg-wine-deep text-ivory">
-      <div aria-hidden className="pointer-events-none absolute -left-[10%] top-[-20%] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgba(142,58,72,0.5),transparent)]" />
-      <div aria-hidden className="pointer-events-none absolute -right-[12%] bottom-[-30%] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgba(47,74,60,0.35),transparent)]" />
+    <section ref={ref} id="manifesto" data-theme="dark" aria-labelledby="manifesto-titulo" className="grain relative overflow-hidden bg-forest-deep text-ivory">
+      <div aria-hidden className="pointer-events-none absolute -left-[10%] top-[-20%] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgba(98,140,112,0.42),transparent)]" />
+      <div aria-hidden className="pointer-events-none absolute -right-[12%] bottom-[-30%] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgba(112,42,55,0.38),transparent)]" />
       <div data-mf-wrap className="container-site relative py-24 sm:py-32 lg:py-40">
         <h2 id="manifesto-titulo" className="flex items-center gap-4 font-sans text-[0.75rem] font-medium uppercase leading-none tracking-[0.32em] text-gold-soft sm:gap-6">
           <span data-mf-label>{manifesto.label}</span>

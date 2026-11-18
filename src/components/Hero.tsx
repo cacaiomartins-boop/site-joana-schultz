@@ -125,7 +125,7 @@ export function Hero() {
       const tl = gsap.timeline({ defaults: { ease: "none", duration: 1 }, scrollTrigger: { trigger: root, start: "top top", end: "bottom top", scrub: 0.6, invalidateOnRefresh: true } });
       if (portrait) tl.to(portrait, { yPercent: 10, scale: 1.05 }, 0);
       tl.to([text, cue].filter(Boolean) as HTMLElement[], { y: () => -0.14 * (text?.offsetHeight ?? 0) }, 0);
-      cards.forEach((c, i) => tl.to(c, { yPercent: -(4 + 3 * i) }, 0));
+      cards.forEach((c, i) => tl.to(c, { yPercent: -(3 + 2 * i) }, 0));
     });
 
     /* ---------- parallax do mouse (ponteiro fino) ---------- */
@@ -190,8 +190,8 @@ export function Hero() {
         </div>
 
         {/* ---------- foto em arco ---------- */}
-        <div data-hero-stage className="relative mx-auto mt-12 w-full max-w-[30rem] [--arc-d:0.75rem] sm:[--arc-d:1.25rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:ml-auto lg:w-[min(100%,32rem,calc((100svh-18rem)*0.8))] lg:min-w-[20rem] lg:self-center lg:[--arc-d:1.5rem]">
-          <div data-hero-portrait className="cq relative aspect-[4/5] w-full lg:will-change-transform">
+        <div data-hero-stage className="relative mx-auto mt-12 w-full max-w-[30rem] [--arc-d:0.75rem] sm:[--arc-d:1.25rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:ml-auto lg:flex lg:w-full lg:items-center lg:gap-4 lg:self-center lg:[--arc-d:1.5rem]">
+          <div data-hero-portrait className="cq relative aspect-[4/5] w-full lg:min-w-0 lg:max-w-[min(24rem,calc((100svh-15rem)*0.8))] lg:flex-1 lg:will-change-transform">
             <div data-hero-shadow data-reveal aria-hidden className="absolute inset-x-[10%] -bottom-5 h-14 rounded-[50%] bg-bronze-deep/25 blur-2xl" />
             <div data-hero-arc data-reveal aria-hidden className="pointer-events-none absolute -inset-[var(--arc-d)] text-bronze">
               <svg viewBox="0 0 100 125" preserveAspectRatio="none" className="absolute inset-0 size-full overflow-visible" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round">
@@ -203,14 +203,14 @@ export function Hero() {
               <div data-hero-media className="absolute inset-0">
                 <img src={hero.image.src} alt={hero.image.alt} {...({ fetchpriority: "high" } as any)} width={341} height={341} className="size-full object-cover object-[50%_18%]" />
               </div>
-              <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(79,29,39,0.28))]" />
+              <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(34,55,43,0.25))]" />
               <div aria-hidden className="absolute inset-0 rounded-[inherit] ring-1 ring-inset ring-white/25" />
             </div>
           </div>
 
-          <ul data-hero-cards aria-label="Temas que trabalho" className="no-scrollbar mt-8 flex snap-x gap-3 overflow-x-auto pb-2 lg:absolute lg:inset-x-2 lg:-bottom-7 lg:mt-0 lg:gap-2 lg:overflow-visible lg:pb-0">
+          <ul data-hero-cards aria-label="Temas que trabalho" className="no-scrollbar mt-8 flex snap-x gap-3 overflow-x-auto pb-2 lg:mt-0 lg:w-[8.5rem] lg:shrink-0 lg:flex-col lg:gap-2.5 lg:overflow-visible lg:pb-0 xl:w-[9.5rem]">
             {hero.cards.map((c, i) => (
-              <li key={c.title} data-hero-card data-reveal className={`w-[17.25rem] shrink-0 snap-start lg:w-auto lg:min-w-0 lg:flex-1`}>
+              <li key={c.title} data-hero-card data-reveal className={`w-[17.25rem] shrink-0 snap-start lg:w-full`}>
                 <Link to={`/terapia/${c.slug}`} className="group flex items-center gap-3 rounded-2xl border border-white/60 bg-ivory/90 p-3.5 pr-4 lg:flex-col lg:gap-1.5 lg:p-2.5 lg:text-center shadow-soft backdrop-blur-md transition-[translate,box-shadow] duration-700 ease-[var(--ease-silk)] hover:-translate-y-1 hover:shadow-card">
                   <span className="grid size-11 shrink-0 place-items-center rounded-full border border-bronze/20 bg-cream text-bronze lg:size-8"><ThemeIcon name={c.icon} className="size-5 lg:size-4" /></span>
                   <span className="min-w-0">

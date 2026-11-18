@@ -93,7 +93,7 @@ export function Process() {
               })}
             </ol>
             <div data-lotus-x aria-hidden className="pointer-events-none absolute -right-2 top-[2.2rem] hidden w-[5.5rem] text-bronze lg:block">
-              <span data-lotus-glow className="absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(closest-side,rgba(184,147,95,0.35),transparent)]" />
+              <span data-lotus-glow className="absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(closest-side,rgba(124,159,136,0.35),transparent)]" />
               <Lotus withBase strokeWidth={1.4} className="relative h-auto w-full" />
             </div>
           </div>
